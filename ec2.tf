@@ -46,7 +46,7 @@ data template_file main {
   vars = {
     STEAM_TOKEN = var.token
     HOSTNAME    = random_pet.main.id
-    PASSWORD    = random_password.password[0].result
+    PASSWORD    = coalesce(var.password, random_password.password.result)
     TAGS        = var.tags
     LOGGING     = var.logging
     GAME_TYPE   = var.game_type
@@ -60,7 +60,6 @@ data template_file main {
 
 resource random_pet main {}
 resource random_password password {
-  count            = var.password == "" ? 1 : var.password
   length           = 6
   special          = true
   override_special = "_%@"
@@ -108,5 +107,6 @@ output random_pet_name {
 
 output password {
   description = "Password String"
-  value       = random_password.password[0].result
+  value       = coalesce(var.password, random_password.password.result)
+  sensitive   = true
 }
