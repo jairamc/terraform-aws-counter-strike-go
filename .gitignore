@@ -1,3 +1,7 @@
 terraform.tfstate*
 id_rsa*
 .terraform/
+.terraform.lock.hcl
+ip.txt
+
+.idea
