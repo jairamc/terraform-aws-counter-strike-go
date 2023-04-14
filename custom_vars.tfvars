@@ -1,7 +1,7 @@
 # Insert here your steam token
 token               = "MYTOKEN"
-region              = "eu-west-2"
-security_group_name = "main"
+region              = "eu-central-1"
+security_group_name = "csgo_sg"
 instance_type       = "m5.large"
 # These tags provide more information on server, it's recommended to use it
 password = ""

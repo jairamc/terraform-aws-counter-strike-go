@@ -1,6 +1,6 @@
 resource aws_security_group main_ssh {
   name_prefix = var.security_group_name
-  description = "Main Security Group"
+  description = "CSGO Security Group"
 
   ingress {
     description = "SSH"
@@ -20,7 +20,7 @@ resource aws_security_group main_ssh {
 
 resource aws_security_group main_tcp {
   name_prefix = var.security_group_name
-  description = "Main TCP Security Group"
+  description = "CSGO TCP Security Group"
 
   ingress {
     description = "TCP"
@@ -40,7 +40,7 @@ resource aws_security_group main_tcp {
 
 resource aws_security_group main_udp {
   name_prefix = var.security_group_name
-  description = "Main UDP Security Group"
+  description = "CSGO UDP Security Group"
 
   ingress {
     description = "UDP"
