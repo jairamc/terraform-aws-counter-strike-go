@@ -40,43 +40,44 @@ Open your terminal and type `connect PUBLIC_IP` changing *PUBLIC_IP* accordingly
 
 ## Change Game Mode
 **Reference**: https://docs.linuxgsm.com/game-servers/counter-strike-global-offensive
-| Game Modes | Game Type | Game Mode | Map Group |
-|------------|:---------:|:---------:|:---------:|
-| Arms Race  | 1 | 0 | mg_armsrace|
-| Classic Casual | 0 | 0 | mg_casualsigma, mg_casualdelta |
-| Classic Competitive | 0 | 1 | mg_active, mg_reserves, mg_hostage, mg_de_dust2 |
-| Custom | 3 | 0 ||
-| Deathmatch | 1 | 2 | mg_deathmatch |
-| Demolition | 1 | 1 | mg_demolition |
-| Wingman | 0 | 2 ||
-| Danger Zone | 6 | 0 | mg_dz_blacksite (map: dz_blacksite), mg_dz_sirocco (map: dz_irocco)|
+
+| Game Modes          | Game Type | Game Mode |                              Map Group                              |
+|:--------------------|:---------:|:---------:|:-------------------------------------------------------------------:|
+| Arms Race           |     1     |     0     |                             mg_armsrace                             |
+| Classic Casual      |     0     |     0     |                   mg_casualsigma, mg_casualdelta                    |
+| Classic Competitive |     0     |     1     |           mg_active, mg_reserves, mg_hostage, mg_de_dust2           |
+| Custom              |     3     |     0     |                                                                     |
+| Deathmatch          |     1     |     2     |                            mg_deathmatch                            |
+| Demolition          |     1     |     1     |                            mg_demolition                            |
+| Wingman             |     0     |     2     |                                                                     |
+| Danger Zone         |     6     |     0     | mg_dz_blacksite (map: dz_blacksite), mg_dz_sirocco (map: dz_irocco) |
 
 if you want to change the game type you can change them accordingly in [custom_vars.tfvars](./custom_vars.tfvars)
 
 ## INPUT
-| Variable | Description | Default | Mandatory |
-|:-:|:-:|:-:|:-:|
-| token | Steam Token | - | yes |
-| region | AWS Region | `"eu-west-2"` | yes |
-| security_group_name | Security Group Name Prefix | `"main"` | yes |
-| ebs_disk_size | Size for attached AWS EBS disk | `"40"` | no |
-| instance_type | AWS Instance Type | `"m5.large"` | yes |
-| password | CSGO Server Password (RCON and Private) | - | no |
-| tags | CSGO Server Tags For Information | - | no |
-| logging | CSGO Server Logging | `"off"` | no |
-| game_type | CSGO Game Type | `0` | yes |
-| game_mode | CSGO Server Game Mode | `1` | yes |
-| map_group | CSGO Server Map Group | `"mg_active, mg_reserves, mg_hostage, mg_de_dust2"` | yes |
-| default_map | CSGO Server Initial Map | `"de_mirage"` | yes |
-| max_players | CSGO Server Max Players | `"10"` | yes |
+|      Variable       |               Description               |                       Default                       | Mandatory |
+|:-------------------:|:---------------------------------------:|:---------------------------------------------------:|:---------:|
+|        token        |               Steam Token               |                          -                          |    yes    |
+|       region        |               AWS Region                |                    `"eu-west-2"`                    |    yes    |
+| security_group_name |       Security Group Name Prefix        |                      `"main"`                       |    yes    |
+|    ebs_disk_size    |     Size for attached AWS EBS disk      |                       `"40"`                        |    no     |
+|    instance_type    |            AWS Instance Type            |                    `"m5.large"`                     |    yes    |
+|      password       | CSGO Server Password (RCON and Private) |                          -                          |    no     |
+|        tags         |    CSGO Server Tags For Information     |                          -                          |    no     |
+|       logging       |           CSGO Server Logging           |                       `"off"`                       |    no     |
+|      game_type      |             CSGO Game Type              |                         `0`                         |    yes    |
+|      game_mode      |          CSGO Server Game Mode          |                         `1`                         |    yes    |
+|      map_group      |          CSGO Server Map Group          | `"mg_active, mg_reserves, mg_hostage, mg_de_dust2"` |    yes    |
+|     default_map     |         CSGO Server Initial Map         |                    `"de_mirage"`                    |    yes    |
+|     max_players     |         CSGO Server Max Players         |                       `"10"`                        |    yes    |
 
 ## OUTPUT
-| Variable | Description |
-|:-:|:-:|
+|      Variable      |                     Description                     |
+|:------------------:|:---------------------------------------------------:|
 | instance_public_ip | AWS Instance Public IP for RCON And Game Connection |
-| password | CSGO Server Password (RCON and Private) |
-| public_ssh_key | AWS Instance Public SSH Key |
-| random_pet_name | CSGO Server Hostname Random String |
+|      password      |       CSGO Server Password (RCON and Private)       |
+|   public_ssh_key   |             AWS Instance Public SSH Key             |
+|  random_pet_name   |         CSGO Server Hostname Random String          |
 
 
 ## Recommendations
